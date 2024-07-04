@@ -2,16 +2,17 @@ pins.setPull(DigitalPin.P13, PinPullMode.PullUp)
 pins.digitalWritePin(DigitalPin.P0, 0)
 pins.digitalWritePin(DigitalPin.P14, 0)
 pins.servoWritePin(AnalogPin.P16, 0);
- 
+
 basic.forever(function () {
     if (input.buttonIsPressed(Button.A)) {
-        pins.digitalWritePin(DigitalPin.P2, 0)
-        pins.analogWritePin(AnalogPin.P12, 300)
-    } else {
         
+        pins.analogWritePin(AnalogPin.P2, 200)
+        pins.digitalWritePin(DigitalPin.P12, 0)
+    } else {
+       
     }
     if (input.buttonIsPressed(Button.B)) {
-        pins.digitalWritePin(DigitalPin.P2, 1)
+        pins.analogWritePin(AnalogPin.P2, 1023)
         pins.digitalWritePin(DigitalPin.P12, 1)
     }
 })
@@ -28,7 +29,7 @@ basic.forever(function () {
 basic.forever(function () {
     let analogValue = pins.analogReadPin(AnalogPin.P4);
     serial.writeValue("value", analogValue);
-    if (analogValue<400) {
+    if (analogValue < 400) {
         pins.servoWritePin(AnalogPin.P16, 90);
     } else {
         pins.servoWritePin(AnalogPin.P16, 0);
