@@ -9,7 +9,7 @@ const int ledPinA2 =  A0;  // Analog pin A2
 
 const int M2_D_pin = 11;  // Motor2 D pin
 const int M2_A_pin = 12;  // Motor2 A pin
-.3
+
 const int M1_D_pin = 5;   // Motor1 D pin
 const int M1_A_pin = 6;   // Motor1 A pin
 
